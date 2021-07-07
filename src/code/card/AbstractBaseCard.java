@@ -13,5 +13,17 @@ public abstract class AbstractBaseCard {
         this.soundUri = sound;
     }
 
+    public int getCost(){
+        return this.cost;
+    }
+
+    public URI getImageUri(){
+        return this.imageUri;
+    }
+
+    public URI getSoundUri(){
+        return this.soundUri;
+    }
+
     public abstract void playCard();
 }
