@@ -2,7 +2,7 @@ package code.card;
 
 import java.net.URI;
 
-public abstract class AbstractBaseCard {
+public abstract class AbstractBaseCard implements CardImpl{
     protected URI imageUri;
     protected URI soundUri;
     protected int cost;
@@ -25,5 +25,5 @@ public abstract class AbstractBaseCard {
         return this.soundUri;
     }
 
-    public abstract void playCard();
+
 }
