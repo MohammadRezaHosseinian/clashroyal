@@ -1,5 +1,6 @@
 package code.card;
 
 public interface CardImpl {
-    public abstract void playCard();
+    void playCard();
+    void upgradeCard();
 }
