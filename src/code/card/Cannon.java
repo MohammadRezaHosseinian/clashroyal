@@ -10,6 +10,9 @@ public abstract class Cannon extends Building implements CardImpl{
         super(cost, img, sound, lifetime, hit_Speed, target, range);
     }
 
+    @Override
+    public void Leftime(int leftime) {}
+
 
     @Override
     public void playCard(){};

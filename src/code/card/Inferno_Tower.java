@@ -10,6 +10,12 @@ public class Inferno_Tower extends Building implements CardImpl{
     }
 
     @Override
+    public void Leftime(int leftime) {}
+
+
+
+
+    @Override
     public void playCard() {
 
     }
