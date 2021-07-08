@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:controller="code.controllers.GreetingController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.85" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #A8E6CF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="51.0" layoutY="38.0" prefHeight="508.0" prefWidth="615.0">
+         <children>
+            <Pane prefHeight="190.0" prefWidth="612.0" style="-fx-background-color: #BAC;">
+               <children>
+                  <Label layoutX="399.0" layoutY="24.0" prefHeight="16.0" prefWidth="202.0" style="-fx-alignment: center; -fx-font-weight: bold;" text="محمد رضا حسینیان " />
+                  <Label layoutX="399.0" layoutY="55.0" prefHeight="16.0" prefWidth="202.0" style="-fx-alignment: center; -fx-font-weight: bold; -fx-: white;" text="مهدی منصوری خواه" />
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A2C2B8;">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="229.0" layoutY="22.0" prefHeight="16.0" prefWidth="158.0" text="خوش آمدید" textAlignment="JUSTIFY" textOverrun="CLIP" wrapText="true">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="loginBtn" onAction="#login" layoutX="68.0" layoutY="87.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="129.0" style="-fx-background-color: #25aa25; -fx-border-color: #000; -fx-border-radius: 10px;" text="ورود" />
+                  <Button fx:id="registerBtn" onAction="#register" layoutX="445.0" layoutY="87.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="129.0" style="-fx-background-color: #25aa25; -fx-border-color: #000;" text="ثبت نام" />
+               </children>
+            </Pane>
+            <Pane prefHeight="195.0" prefWidth="585.0" style="-fx-background-color: #2C68F5; -fx-border-color: #000;" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

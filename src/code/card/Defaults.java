@@ -23,4 +23,14 @@ public class Defaults {
     protected static final int Archer_HP = 125;
     protected static final Range Archer_RANGE = Range.RANGED;
     protected static final Target Archer_TARGET = Target.AIR_GROUND_TARGET;
+    // create BabyDragon features
+    protected static final int BabyDragon_COST = 4;
+    protected static final URI BabyDragon_IMAGE = null;
+    protected static final URI BabyDragon_SOUND = null;
+    protected static final float BabyDragon_HIT_SPEED = 1.8f;
+    protected static final int BabyDragon_COUNT = 1;
+    protected static final int BabyDragon_DAMAGE = 100;
+    protected static final int BabyDragon_HP = 800;
+    protected static final Range BabyDragon_RANGE = Range.RANGED;
+    protected static final Target BabyDragon_TARGET = Target.AIR_GROUND_TARGET;
 }

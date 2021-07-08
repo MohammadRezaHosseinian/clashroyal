@@ -26,4 +26,15 @@ public class Builders {
         return tb;
     }
 
+    protected static TroopBuilder CreateBabyDragonBuilder(){
+        TroopBuilder tb = new TroopBuilder();
+        tb.addHitSpeed(Defaults.BabyDragon_HIT_SPEED);
+        tb.addCounts(Defaults.BARBARIANS_COUNT);
+        tb.addDamage(Defaults.BARBARIANS_DAMAGE);
+        tb.addHp(Defaults.BARBARIANS_HP);
+        tb.addRange(Defaults.BARBARIANS_RANGE);
+        tb.addTarget(Defaults.BARBARIANS_TARGET);
+        tb.addCost(Defaults.BabyDragon_COST);
+        return tb;
+    }
 }

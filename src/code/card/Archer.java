@@ -1,8 +1,10 @@
 package code.card;
 
+import code.card.*;
+
 import java.net.URI;
 
-public class Archer extends  Troop{
+public class Archer extends Troop {
 
 
     public Archer(int cost, URI img, URI sound, TroopBuilder tb) {
