@@ -18,7 +18,7 @@ public abstract class Building extends AbstractBaseCard {
         this.range = range;
     }
 
-
+    public abstract void Leftime(int leftime);
 
 
 
