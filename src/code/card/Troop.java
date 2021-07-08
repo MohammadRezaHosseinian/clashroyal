@@ -55,5 +55,5 @@ public abstract class Troop extends AbstractBaseCard implements CardImpl{
     public abstract void playCard();
 
     @Override
-    public abstract void upgradeCard();
+    public abstract void upgradeCard(Level l);
 }

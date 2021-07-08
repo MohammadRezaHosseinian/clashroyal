@@ -14,4 +14,16 @@ public class Builders {
         return tb;
     }
 
+    protected static TroopBuilder CreateArcherBuilder(){
+        TroopBuilder tb = new TroopBuilder();
+        tb.addHitSpeed(Defaults.Archer_HIT_SPEED);
+        tb.addCounts(Defaults.Archer_COUNT);
+        tb.addDamage(Defaults.Archer_DAMAGE);
+        tb.addHp(Defaults.Archer_HP);
+        tb.addRange(Defaults.Archer_RANGE);
+        tb.addTarget(Defaults.Archer_TARGET);
+        tb.addCost(Defaults.Archer_COST);
+        return tb;
+    }
+
 }

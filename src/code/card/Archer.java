@@ -2,12 +2,12 @@ package code.card;
 
 import java.net.URI;
 
-public class Barbarians extends Troop{
+public class Archer extends  Troop{
 
-    public Barbarians(TroopBuilder tb) {
+
+    public Archer(int cost, URI img, URI sound, TroopBuilder tb) {
         super(tb.cost, Defaults.BARBARIANS_IMAGE, Defaults.BARBARIANCE_SOUND, tb);
     }
-
 
     @Override
     public void playCard() {
@@ -16,9 +16,8 @@ public class Barbarians extends Troop{
 
     @Override
     public void upgradeCard(Level l) {
-        BarabariansUpgrade bu = new BarabariansUpgrade(l);
-        bu.upgrade();
-        this.hp = bu.hp;
-        this.damage = bu.damage;
+        ArchersUpgrade au = new ArchersUpgrade(l);
+        this.hp = au.hp;
+        this.damage = au.damage;
     }
 }
