@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="578.0" prefWidth="900.0" style="-fx-background-color: #535A58;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.controllers.RegisterController">
+   <children>
+      <Pane layoutX="287.0" layoutY="81.0" opacity="0.94" prefHeight="389.0" prefWidth="364.0" style="-fx-background-color: #002525;">
+         <children>
+            <TextField fx:id="username" alignment="CENTER" layoutX="97.0" layoutY="86.0" prefHeight="42.0" prefWidth="170.0" promptText="نام کاربری/ایمیل" />
+            <PasswordField fx:id="password" alignment="CENTER" layoutX="97.0" layoutY="167.0" prefHeight="42.0" prefWidth="170.0" promptText="گذرواژه" />
+            <Button fx:id="confirmPassword" layoutX="129.0" layoutY="323.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="107.0" text="ثبت نام" />
+            <PasswordField alignment="CENTER" layoutX="97.0" layoutY="238.0" prefHeight="42.0" prefWidth="170.0" promptText="تکرار گذرواژه" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
