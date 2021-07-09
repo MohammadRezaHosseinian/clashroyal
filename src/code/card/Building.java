@@ -11,5 +11,5 @@ public abstract class Building extends AbstractBaseCard implements CardImpl{
     public abstract void playCard();
 
     @Override
-    public abstract void upgradeCard();
+    public abstract void upgradeCard(Level l);
 }
