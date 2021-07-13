@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.main.Battle_History">
+   <children>
+      <Label alignment="CENTER" layoutX="30.0" layoutY="5.0" prefHeight="54.0" prefWidth="528.0" text="Battle_History" textFill="#5c30fa">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="87.0" prefHeight="18.0" prefWidth="106.0" text="The first game " />
+      <Label fx:id="first_game" layoutX="167.0" layoutY="87.0" prefHeight="18.0" prefWidth="135.0" text="3- 1                 WIN" />
+      <Label layoutX="25.0" layoutY="140.0" text="The second game" />
+      <Label layoutX="25.0" layoutY="191.0" text="The third game" />
+      <Label fx:id="second_game" layoutX="167.0" layoutY="140.0" prefHeight="18.0" prefWidth="135.0" text="2-3                   Lost" />
+      <Label fx:id="third_game" layoutX="167.0" layoutY="191.0" prefHeight="18.0" prefWidth="135.0" />
+      <Button layoutX="398.0" layoutY="93.0" mnemonicParsing="false" onMouseClicked="#Update" prefHeight="42.0" prefWidth="158.0" text="UPDATE" />
+      <Button layoutX="388.0" layoutY="299.0" mnemonicParsing="false" onAction="#Back" prefHeight="67.0" prefWidth="178.0" text="Back">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>
