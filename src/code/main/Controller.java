@@ -1,4 +1,2 @@
-package code.main;
-
-public class Controller {
+package code.main;public class Controller {
 }
