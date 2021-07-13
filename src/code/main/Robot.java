@@ -1,2 +1,4 @@
-package code.main;public class Robot {
+package code.main;
+
+public class Robot {
 }
