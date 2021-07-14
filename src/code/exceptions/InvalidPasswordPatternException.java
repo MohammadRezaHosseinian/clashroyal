@@ -1,2 +1,7 @@
-package code.exceptions;public class InvalidPasswordPatternException {
+package code.exceptions;
+
+public class InvalidPasswordPatternException extends Exception{
+    public InvalidPasswordPatternException(String message){
+        super(message);
+    }
 }

@@ -1,2 +1,7 @@
-package code.exceptions;public class InvalidEmailException {
+package code.exceptions;
+
+public class InvalidEmailException extends Exception{
+    public InvalidEmailException(String message){
+        super(message);
+    }
 }
