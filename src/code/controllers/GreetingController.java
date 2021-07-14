@@ -6,15 +6,33 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class GreetingController {
     @FXML
+    public AnchorPane parent;
+    @FXML
+    public ImageView welcomeImage;
+    @FXML
     private Button loginBtn;
     @FXML
     private Button registerBtn;
+
+
+    @FXML
+    public void initialize() {
+        BackgroundImage bi = new BackgroundImage(new Image("res//drawable//back.jpg"),
+                BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT
+        );
+        this.parent.setBackground(new Background(bi));
+        Image welcome = new Image(Defaults.WELCOME_IMAGE_URI);
+        this.welcomeImage.setImage(welcome);
+    }
 
 
     public void login(ActionEvent actionEvent) throws IOException {
@@ -24,7 +42,6 @@ public class GreetingController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/login.fxml"));
         Parent parent = loader.load();
         LoginController lc = loader.getController();
-        lc.setUsername("hamed");
         statge.setScene(new Scene(parent));
     }
 
