@@ -15,5 +15,8 @@ public class SqlCommand {
             email text UNIQUE NOT NULL,
             password text NOT NULL);
             """, USER_TABLE_NAME);
+    public static final String RETRIEVE_ONE_USER = """
+            SELECT * FROM USERS WHERE ((username='%s' AND password='%s') OR (email='%s' AND password='%s')) LIMIT 1;
+            """;
 
 }

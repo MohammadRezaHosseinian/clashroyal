@@ -42,7 +42,6 @@ public class GreetingController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/login.fxml"));
         Parent parent = loader.load();
         LoginController lc = loader.getController();
-        lc.setUsername("hamed");
         statge.setScene(new Scene(parent));
     }
 
