@@ -51,12 +51,16 @@ public class LoginController {
         try {
             User user = handler.LoginUser(usernameOrEmailText, passwordText);
             System.out.println(String.format("user %s login succesful", user.getEmail()));
-        } catch (SQLException | NotFoundUserException throwables) {
+            Stage stage = (Stage) this.gotoRegister.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/fight.fxml"));
+            Parent parent = loader.load();
+            stage.setScene(new Scene(parent));
+        } catch (SQLException | NotFoundUserException | IOException throwables) {
             throwables.printStackTrace();
         }
 
     }
-    
+
     public void gotoRegisterClicked(MouseEvent mouseEvent) throws IOException {
         Stage stage = (Stage) this.gotoRegister.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/register.fxml"));
