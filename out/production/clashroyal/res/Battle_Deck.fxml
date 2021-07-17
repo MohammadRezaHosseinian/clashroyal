@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.main.Battle_Deck">
+   <children>
+      <ImageView fx:id="Image_Barbar" fitHeight="150.0" fitWidth="200.0" layoutX="7.0" layoutY="52.0" onMouseClicked="#Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Image_Archer" fitHeight="150.0" fitWidth="200.0" layoutX="238.0" layoutY="52.0" onMouseClicked="#Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Image_BabyDragon" fitHeight="150.0" fitWidth="200.0" layoutX="456.0" layoutY="52.0" onMouseClicked="#Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image6.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="212.0" layoutY="1.0" prefHeight="34.0" prefWidth="494.0" text="Selected cards" textFill="#1113ed">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="Image_Valkyrie" fitHeight="150.0" fitWidth="200.0" layoutX="6.0" layoutY="214.0" onMouseClicked="#Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image5.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Image_Giant" fitHeight="150.0" fitWidth="200.0" layoutX="237.0" layoutY="214.0" onMouseClicked="#Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="497.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="Image_Wizard" fitHeight="150.0" fitWidth="200.0" layoutX="459.0" layoutY="214.0" onMouseClicked="#Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Image_Cannon" fitHeight="150.0" fitWidth="200.0" layoutX="714.0" layoutY="52.0" onMouseClicked="#Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image11.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Image_Rage" fitHeight="150.0" fitWidth="200.0" layoutX="716.0" layoutY="214.0" onMouseClicked="#Selected" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image8.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="234.0" layoutY="373.0" prefHeight="42.0" prefWidth="443.0" text="Card Collection" textFill="#222ac9">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="Image_Arrows" fitHeight="150.0" fitWidth="200.0" layoutY="427.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image10.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Image_FireBall" fitHeight="150.0" fitWidth="200.0" layoutX="135.0" layoutY="427.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image9.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Image_InfernoTower" fitHeight="150.0" fitWidth="200.0" layoutX="270.0" layoutY="427.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image12.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Image_Pakka" fitHeight="150.0" fitWidth="200.0" layoutX="397.0" layoutY="427.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image7.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="523.0" layoutY="427.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="650.0" layoutY="427.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image5.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="777.0" layoutY="427.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image8.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="577.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="134.0" layoutY="577.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image3.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="260.0" layoutY="577.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image2.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="394.0" layoutY="577.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image11.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="520.0" layoutY="577.0" onMouseClicked="#Replace_Card" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image6.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="697.0" layoutY="602.0" mnemonicParsing="false" onAction="#Back" prefHeight="86.0" prefWidth="194.0" text="Back">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
