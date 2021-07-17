@@ -28,7 +28,9 @@ public class Arrows extends Spell{
     }
 
     @Override
-    public void upgradeCard() {
+    public void upgradeCard(Level l) {
 
     }
+
+
 }

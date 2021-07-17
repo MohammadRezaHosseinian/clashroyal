@@ -15,7 +15,10 @@ public class Barbarians extends Troop{
     }
 
     @Override
-    public void upgradeCard() {
-
+    public void upgradeCard(Level l) {
+        BarabariansUpgrade bu = new BarabariansUpgrade(l);
+        bu.upgrade();
+        this.hp = bu.hp;
+        this.damage = bu.damage;
     }
 }

@@ -21,7 +21,9 @@ public class Inferno_Tower extends Building implements CardImpl{
     }
 
     @Override
-    public void upgradeCard() {
+    public void upgradeCard(Level l) {
 
     }
+
+
 }

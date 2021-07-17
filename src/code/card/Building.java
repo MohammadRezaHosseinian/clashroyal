@@ -21,5 +21,7 @@ public abstract class Building extends AbstractBaseCard {
     public abstract void Leftime(int leftime);
 
 
-
 }
+
+
+

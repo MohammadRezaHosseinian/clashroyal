@@ -17,7 +17,6 @@ public abstract class Cannon extends Building implements CardImpl{
     @Override
     public void playCard(){};
 
-    @Override
-    public void upgradeCard(){};
+
 
 }

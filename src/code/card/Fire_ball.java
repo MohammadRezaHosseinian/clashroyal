@@ -34,13 +34,9 @@ public class Fire_ball extends Spell{
     }
 
     @Override
-    public void upgradeCard() {
+    public void upgradeCard(Level l) {
 
     }
-
-
-
-
 
 
 }

@@ -24,7 +24,9 @@ public class Rage extends Spell{
     }
 
     @Override
-    public void upgradeCard() {
+    public void upgradeCard(Level l) {
 
     }
+
+
 }
