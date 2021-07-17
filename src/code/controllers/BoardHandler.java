@@ -12,6 +12,8 @@ public class BoardHandler {
     private final GraphicsContext graphics;
     private final double CANVAS_WIDTH ;
     private final double CANVAS_HEIGHT ;
+
+
     public BoardHandler(Canvas canvas){
         this.board = canvas;
         this.CANVAS_HEIGHT = this.board.getHeight();
