@@ -1,5 +1,5 @@
 package code.heros;
 
-public interface DieHero {
+public interface DieAble {
     public void die();
 }
