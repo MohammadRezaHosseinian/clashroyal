@@ -57,14 +57,14 @@ public class BoardHandler {
     private void drawDownSideCastlesQueenLeft() {
         double kingCastleWidth = this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = this.CANVAS_HEIGHT -  this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
-        this.graphics.drawImage(new Image(Defaults.CASTLES_URIS[1]), kingCastleWidth, kingCastleHeght, Defaults.KING_CASTLE_WIDTH, Defaults.KING_CASTLE_HEIGHT);
+        this.graphics.drawImage(new Image(Defaults.CASTLES_URIS[2]), kingCastleWidth, kingCastleHeght, Defaults.KING_CASTLE_WIDTH, Defaults.KING_CASTLE_HEIGHT);
 
 
     }
     private void drawDownSideCastlesQueenRight() {
         double kingCastleWidth = this.CANVAS_WIDTH / 2 + this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = this.CANVAS_HEIGHT - this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
-        this.graphics.drawImage(new Image(Defaults.CASTLES_URIS[1]), kingCastleWidth, kingCastleHeght, Defaults.KING_CASTLE_WIDTH, Defaults.KING_CASTLE_HEIGHT);
+        this.graphics.drawImage(new Image(Defaults.CASTLES_URIS[2]), kingCastleWidth, kingCastleHeght, Defaults.KING_CASTLE_WIDTH, Defaults.KING_CASTLE_HEIGHT);
 
 
     }
@@ -97,14 +97,14 @@ public class BoardHandler {
     private void drawUpSideCastlesQueenLeft() {
         double kingCastleWidth = this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = 0 + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
-        this.graphics.drawImage(new Image(Defaults.CASTLES_URIS[0]), kingCastleWidth, kingCastleHeght, Defaults.KING_CASTLE_WIDTH, Defaults.KING_CASTLE_HEIGHT);
+        this.graphics.drawImage(new Image(Defaults.CASTLES_URIS[3]), kingCastleWidth, kingCastleHeght, Defaults.KING_CASTLE_WIDTH, Defaults.KING_CASTLE_HEIGHT);
 
 
     }
     private void drawUpSideCastlesQueenRight() {
         double kingCastleWidth = this.CANVAS_WIDTH / 2 + this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = 0 + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
-        this.graphics.drawImage(new Image(Defaults.CASTLES_URIS[0]), kingCastleWidth, kingCastleHeght, Defaults.KING_CASTLE_WIDTH, Defaults.KING_CASTLE_HEIGHT);
+        this.graphics.drawImage(new Image(Defaults.CASTLES_URIS[3]), kingCastleWidth, kingCastleHeght, Defaults.KING_CASTLE_WIDTH, Defaults.KING_CASTLE_HEIGHT);
 
 
     }

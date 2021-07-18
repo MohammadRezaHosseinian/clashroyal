@@ -38,9 +38,10 @@ public class Defaults {
     protected static final double BRIDGE_PERCENT = .08;
     protected static final double CASTLE_ROW_PERCENT = .04;
     protected static final String[] CASTLES_URIS = {
-            "res//drawable//tower2.png",
-            "res//drawable//tower1.png",
-            "res//drawable//tower3.png"
+            "res//drawable//tower5.png",
+            "res//drawable//tower4.png",
+            "res//drawable//tower7.png",
+            "res//drawable//tower6.png"
     };
     protected static final int KING_CASTLE_WIDTH = 60;
     protected static final int KING_CASTLE_HEIGHT = 80;
