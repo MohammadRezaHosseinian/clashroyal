@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.main.Training_Camp">
+   <children>
+      <Button layoutY="337.0" mnemonicParsing="false" onAction="#Intelligent_Robot" prefHeight="62.0" prefWidth="222.0" text="Intelligent Robot">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="353.0" layoutY="337.0" mnemonicParsing="false" onAction="#Robot" prefHeight="62.0" prefWidth="246.0" text="Robot">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="230.0" fitWidth="400.0" layoutX="183.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image16.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

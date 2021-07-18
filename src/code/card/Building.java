@@ -2,14 +2,26 @@ package code.card;
 
 import java.net.URI;
 
-public abstract class Building extends AbstractBaseCard implements CardImpl{
-    public Building(int cost, URI img, URI sound) {
+public abstract class Building extends AbstractBaseCard {
+
+
+    private int hit_Speed;
+    private Target target;
+    private Range range;
+    private int lifetime;
+
+    public Building(int cost, URI img, URI sound, int lifetime, int hit_Speed, Target target, Range range) {
         super(cost, img, sound);
+        this.lifetime = lifetime;
+        this.hit_Speed = hit_Speed;
+        this.target = target;
+        this.range = range;
     }
 
-    @Override
-    public abstract void playCard();
+    public abstract void Leftime(int leftime);
 
-    @Override
-    public abstract void upgradeCard(Level l);
+
 }
+
+
+
