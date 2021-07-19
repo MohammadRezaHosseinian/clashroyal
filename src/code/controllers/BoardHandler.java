@@ -1,9 +1,17 @@
 package code.controllers;
 
+import code.heros.Position;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.image.WritableImage;
+import javafx.scene.paint.Color;
 
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 
@@ -12,6 +20,7 @@ public class BoardHandler {
     private final GraphicsContext graphics;
     private final double CANVAS_WIDTH ;
     private final double CANVAS_HEIGHT ;
+    private Image img;
 
 
     public BoardHandler(Canvas canvas){
@@ -19,6 +28,8 @@ public class BoardHandler {
         this.CANVAS_HEIGHT = this.board.getHeight();
         this.CANVAS_WIDTH = this.board.getWidth();
         this.graphics = canvas.getGraphicsContext2D();
+//        this.initBoard();
+        this.img = new Image("res//drawable//base.png");
     }
 
     private void drawGrounds(){
@@ -34,6 +45,10 @@ public class BoardHandler {
         }
     }
 
+    public void drawBase(){
+        this.graphics.drawImage(this.img,0,0,this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
+    }
+
     public void initBoard(){
         this.drawGrounds();
         this.drawRiver();
@@ -44,9 +59,21 @@ public class BoardHandler {
         drawUpSideCastlesQueenRight();
         drawDownSideCastlesQueenLeft();
         drawDownSideCastlesQueenRight();
+        //this.saveAsImage();
     }
 
+    private void saveAsImage() {
 
+            WritableImage wi = new WritableImage((int)CANVAS_WIDTH,(int)CANVAS_HEIGHT);
+
+            try {
+                SnapshotParameters sp = new SnapshotParameters();
+                sp.setFill(Color.TRANSPARENT);
+                ImageIO.write(SwingFXUtils.fromFXImage(board.snapshot(sp,wi),null),"png",new File("src//res//drawable//base.png"));
+            } catch ( IOException e) {
+                e.printStackTrace();
+            }
+    }
 
     private void drawDownSideCastles() {
         double kingCastleWidth = this.CANVAS_WIDTH / 2;
@@ -61,6 +88,7 @@ public class BoardHandler {
 
 
     }
+
     private void drawDownSideCastlesQueenRight() {
         double kingCastleWidth = this.CANVAS_WIDTH / 2 + this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = this.CANVAS_HEIGHT - this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
@@ -94,6 +122,7 @@ public class BoardHandler {
 
 
     }
+
     private void drawUpSideCastlesQueenLeft() {
         double kingCastleWidth = this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = 0 + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
@@ -101,6 +130,7 @@ public class BoardHandler {
 
 
     }
+
     private void drawUpSideCastlesQueenRight() {
         double kingCastleWidth = this.CANVAS_WIDTH / 2 + this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = 0 + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
@@ -108,10 +138,6 @@ public class BoardHandler {
 
 
     }
-
-
-
-
 
     private void drawRiver() {
         Image tileImage;
@@ -128,4 +154,77 @@ public class BoardHandler {
             }
         }
     }
+
+    public Position getLeftUpSideBridgePos(){
+        double riverHeight = this.CANVAS_HEIGHT / 2 - this.CANVAS_HEIGHT * Defaults.RIVER_PERCENT_PER_MAP_SIDE - Defaults.TILE_HEIGHT * 2.3 ;
+        double leftBridgeWidth = this.CANVAS_WIDTH / 4 - this.CANVAS_WIDTH * Defaults.BRIDGE_PERCENT + Defaults.TILE_WIDTH * 1.5;
+        return  new Position(leftBridgeWidth, riverHeight);
+    }
+
+    public Position getLeftDownSideBridgePos(){
+        double riverHeight = this.CANVAS_HEIGHT / 2 + this.CANVAS_HEIGHT * Defaults.RIVER_PERCENT_PER_MAP_SIDE - Defaults.TILE_HEIGHT * 1.3 ;
+        double leftBridgeWidth = this.CANVAS_WIDTH / 4 + this.CANVAS_WIDTH * Defaults.BRIDGE_PERCENT - Defaults.TILE_WIDTH * 2.5 ;
+        return new Position(leftBridgeWidth,riverHeight);
+
+    }
+
+    public Position getRightDownSideBridgePos(){
+        Position pos = this.getLeftDownSideBridgePos();
+        pos.setX(pos.getX() + CANVAS_WIDTH / 2);
+        return pos;
+    }
+
+    public Position getRightUpSideBridgePos(){
+        Position pos = this.getLeftUpSideBridgePos();
+        pos.setX(pos.getX() + CANVAS_WIDTH / 2);
+        return pos;
+    }
+
+    public Position getLeftDownSideCastlePos(){
+        double CastleWidth = this.CANVAS_WIDTH / 4;
+        double CastleHeight = this.CANVAS_HEIGHT - this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
+        return new Position(CastleWidth,CastleHeight);
+
+    }
+
+    public Position getRightDownSideCastlePos(){
+        double CastleWidth = this.CANVAS_WIDTH /2 + this.CANVAS_WIDTH / 4;
+        double CastleHeight = this.CANVAS_HEIGHT + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
+        return new Position(CastleWidth,CastleHeight);
+
+    }
+
+    public Position getDownSideKingCastlePos(){
+        double kingCastleWidth = this.CANVAS_WIDTH /2 ;
+        double kingCastleHeight = this.CANVAS_HEIGHT - this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
+        return new Position(kingCastleWidth,kingCastleHeight);
+
+    }
+
+    public Position getLeftUpSideCastlePos(){
+        double CastleWidth = this.CANVAS_WIDTH / 4 ;
+        double CastleHeight = 0 + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
+        return new Position(CastleWidth,CastleHeight);
+
+    }
+
+    public Position getRightUpSideCastlePos(){
+        double CastleWidth = this.CANVAS_WIDTH / 2 + this.CANVAS_WIDTH / 4 ;
+        double CastleHeight = 0 + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
+        return new Position(CastleWidth,CastleHeight);
+
+    }
+
+    public Position getUpSideKingCastlePos(){
+        double kingCastleWidth = this.CANVAS_WIDTH / 2;
+        double kingCastleHeight = this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
+        return new Position(kingCastleWidth,kingCastleHeight);
+
+    }
+
+
+    public double getCANVAS_WIDTH(){
+        return this.CANVAS_WIDTH;
+    }
 }
+

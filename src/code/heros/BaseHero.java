@@ -1,30 +1,53 @@
 package code.heros;
 
-import code.card.Speed;
-import javafx.concurrent.Task;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
-public abstract class BaseHero  implements Runnable{
+public abstract class BaseHero implements ScreenObject {
 
-    protected boolean isAlive;
+    private Image img;
+    protected Position position;
     protected int hp;
-    protected Position currnetPos ;
-    protected Speed speed;
-    protected ImageView imageView;
+    protected Dimension dimension;
+    protected Position destination;
+    protected Team team;
 
-    public  BaseHero(ImageView imageView, int hp, Position pos, Speed speed){
-        this.imageView = imageView;
-        this.isAlive = true;
+    public BaseHero(Image img, Position position, Dimension dimension, int hp, Team team){
+        this.img = img;
+        this.position = position;
+        this.dimension = dimension;
         this.hp = hp;
-        this.currnetPos = pos;
-        this.speed = speed;
+        this.team = team;
     }
 
-    protected void checkIsAlive(){
-        if(hp <= 0)
-            this.isAlive = false;
+    public boolean isAlive(){
+        return this.hp > 0;
     }
-    public abstract Position findNextAim();
 
+    @Override
+    public void draw(GraphicsContext g) {
+        g.drawImage(this.img,
+                position.getX(),
+                position.getY(),
+                dimension.getWidth(),
+                dimension.getHeight()
+        );
+    }
+
+    @Override
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setDestination(Position d){
+        this.destination = d;
+    }
+
+    @Override
+    public abstract void updatePos();
+
+    @Override
+    public Position getCurrentPos() {
+        return this.position;
+    }
 }

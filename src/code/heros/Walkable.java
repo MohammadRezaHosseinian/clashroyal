@@ -1,6 +1,5 @@
 package code.heros;
 
-public interface CanWalk {
-
+public interface Walkable {
     public void walk();
 }

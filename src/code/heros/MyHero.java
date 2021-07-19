@@ -1,55 +1,33 @@
 package code.heros;
 
-import code.card.Speed;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
 
-public class MyHero extends BaseHero implements CanWalk{
-    public MyHero(ImageView imageView, int hp, Position pos, Speed speed) {
-        super(imageView, hp, pos, speed);
+public class MyHero extends BaseHero implements  Walkable{
+    public MyHero(Image img, Position position, Dimension dimension, int hp, Team team) {
+        super(img, position, dimension, hp, team);
     }
-
 
     @Override
-    public Position findNextAim() {
-        return new Position(0, 0);
+    public void updatePos() {
+        walk();
     }
 
-
-    @Override
-    public void run()  {
-        while (isAlive) {
-            this.walk();
-            this.checkIsAlive();
-            try {
-                Thread.sleep(15);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
 
     @Override
     public void walk() {
-        Position aim = this.findNextAim();
-        double m = (aim.getHeight() - currnetPos.getHeight())/(aim.getWidth() - currnetPos.getWidth());
-        double y = currnetPos.getHeight() + sign(aim.getHeight() - currnetPos.getHeight());
-        double x = currnetPos.getWidth() + sign(aim.getWidth() - currnetPos.getWidth());
-        this.currnetPos = new Position(x, y);
-
+        if(destination == null)
+            return;
+        double x = position.getX();
+        double y = position.getY();
+        this.position.setX(x + sign(destination.getX() - x));
+        this.position.setY(y + sign(destination.getY() - y));
     }
 
-    private double sign(double x){
-        if(x == 0)
-            return 0;
-        if(x > 0)
+    public int sign(double i){
+        if(i < 0)
+            return -1;
+        if(i > 0)
             return 1;
-        return -1;
+        return 0;
     }
-
-    public void changePos(){
-        this.imageView.setX(currnetPos.getWidth());
-        this.imageView.setY(currnetPos.getHeight());
-    }
-
 }
