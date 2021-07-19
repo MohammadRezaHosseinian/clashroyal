@@ -1,26 +1,28 @@
 package code.heros;
 
 public class Position {
-    private double width;
-    private double height;
+    private double x;
+    private double y;
 
     public Position(double x, double y){
-        this.height = y;
-        this.width = x;
+        this.x = x;
+        this.y = y;
     }
 
-    public double getWidth(){
-        return this.width;
+    public double getX(){
+        return x;
     }
-    public void setWidth(double width){
-        this.width = width;
-    }
-
-    public double getHeight() {
-        return height;
+    public double getY(){
+        return this.y;
     }
 
-    public void setHeight(double height) {
-        this.height = height;
+
+    public void setX(double newX){
+        this.x = newX;
     }
+
+    public void setY(double newY){
+        this.y = newY;
+    }
+
 }
