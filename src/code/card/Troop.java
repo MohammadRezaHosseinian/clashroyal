@@ -12,7 +12,7 @@ public abstract class Troop extends AbstractBaseCard implements CardImpl{
     protected Range range;
     protected int counts;
 
-    public Troop(int cost, URI img, URI sound, TroopBuilder tb) {
+    public Troop(int cost, String img, URI sound, TroopBuilder tb) {
         super(cost, img, sound);
         this.hp = tb.hp;
         this.damage = tb.damage;

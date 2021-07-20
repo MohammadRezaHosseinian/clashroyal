@@ -3,11 +3,11 @@ package code.card;
 import java.net.URI;
 
 public abstract class AbstractBaseCard{
-    protected URI imageUri;
+    protected String imageUri;
     protected URI soundUri;
     protected int cost;
 
-    public AbstractBaseCard(int cost, URI img, URI sound){
+    public AbstractBaseCard(int cost, String img, URI sound){
         this.cost = cost;
         this.imageUri = img;
         this.soundUri = sound;
@@ -18,7 +18,7 @@ public abstract class AbstractBaseCard{
     }
 
 
-    public URI getImageUri(){
+    public String getImageUri(){
         return this.imageUri;
     }
 
