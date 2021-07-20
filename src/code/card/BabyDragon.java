@@ -1,10 +1,8 @@
 package code.card;
 
-import java.net.URI;
-
 public class BabyDragon extends Troop{
 
-    public BabyDragon(int cost, URI img, URI sound, TroopBuilder tb) {
+    public BabyDragon(TroopBuilder tb) {
         super(tb.cost,Defaults.BabyDragon_IMAGE,Defaults.BabyDragon_SOUND,tb);
     }
 

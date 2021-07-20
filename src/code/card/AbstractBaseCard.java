@@ -17,6 +17,7 @@ public abstract class AbstractBaseCard{
         return this.cost;
     }
 
+
     public URI getImageUri(){
         return this.imageUri;
     }

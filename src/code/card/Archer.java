@@ -1,13 +1,9 @@
 package code.card;
 
-import code.card.*;
-
-import java.net.URI;
-
 public class Archer extends Troop {
 
 
-    public Archer(int cost, URI img, URI sound, TroopBuilder tb) {
+    public Archer(TroopBuilder tb) {
         super(tb.cost, Defaults.Archer_IMAGE, Defaults.Archer_SOUND, tb);
     }
 

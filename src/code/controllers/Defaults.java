@@ -32,7 +32,7 @@ public class Defaults {
     protected static final int RIVERS_LENGTH = RIVERS_URIS.length;
     protected static final int TILES_KIND_COUNT = GROUNDS_URIS.length;
     protected static final int BRIDGES_KIND_COUNT = BRIDGES_URIS.length;
-    protected static final int TILE_WIDTH = 25;
+    public static final int TILE_WIDTH = 25;
     protected static final int TILE_HEIGHT = 25;
     protected static final double RIVER_PERCENT_PER_MAP_SIDE = .05;
     protected static final double BRIDGE_PERCENT = .08;
