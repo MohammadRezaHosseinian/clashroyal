@@ -2,7 +2,7 @@ package code.card;
 
 public class Builders {
 
-    protected static TroopBuilder CreateBarbariansBuilder(){
+    public static TroopBuilder CreateBarbariansBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.BARBARIANS_HIT_SPEED);
         tb.addCounts(Defaults.BARBARIANS_COUNT);
@@ -14,7 +14,7 @@ public class Builders {
         return tb;
     }
 
-    protected static TroopBuilder CreateArcherBuilder(){
+    public static TroopBuilder CreateArcherBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.Archer_HIT_SPEED);
         tb.addCounts(Defaults.Archer_COUNT);
@@ -26,7 +26,7 @@ public class Builders {
         return tb;
     }
 
-    protected static TroopBuilder CreateBabyDragonBuilder(){
+    public static TroopBuilder CreateBabyDragonBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.BabyDragon_HIT_SPEED);
         tb.addCounts(Defaults.BabyDragon_COUNT);
@@ -38,7 +38,7 @@ public class Builders {
         return tb;
     }
 
-    protected static TroopBuilder CreateWizardBuilder(){
+    public static TroopBuilder CreateWizardBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.WIZARD_HIT_SPEED);
         tb.addCounts(Defaults.WIZARD_COUNT);
@@ -50,7 +50,7 @@ public class Builders {
         return tb;
     }
 
-    protected static TroopBuilder CreateMiniPEKKABuilder(){
+    public static TroopBuilder CreateMiniPEKKABuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.MiniPEKKA_HIT_SPEED);
         tb.addCounts(Defaults.MiniPEKKA_COUNT);
@@ -62,7 +62,7 @@ public class Builders {
         return tb;
     }
 
-    protected static TroopBuilder CreateGiantBuilder(){
+    public static TroopBuilder CreateGiantBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.Giant_HIT_SPEED);
         tb.addCounts(Defaults.Giant_COUNT);
@@ -74,7 +74,7 @@ public class Builders {
         return tb;
     }
 
-    protected static TroopBuilder CreateValkyrieBuilder(){
+    public static TroopBuilder CreateValkyrieBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.Valkyrie_HIT_SPEED);
         tb.addCounts(Defaults.Valkyrie_COUNT);

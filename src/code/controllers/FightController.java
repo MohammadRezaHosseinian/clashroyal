@@ -70,5 +70,8 @@ public class FightController {
 
             }
         });
+
+        BotGamer bot = new BotGamer(manger, BotLevel.EASY, "mamoosh");
+        new Thread(bot).start();
     }
 }

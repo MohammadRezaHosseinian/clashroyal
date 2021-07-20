@@ -1,10 +1,8 @@
 package code.card;
 
-import java.net.URI;
-
 public class Wizard extends Troop{
 
-    public Wizard(int cost, URI img, URI sound, TroopBuilder tb) {
+    public Wizard(TroopBuilder tb) {
         super(tb.cost, Defaults.WIZARD_IMAGE, Defaults.WIZARD_SOUND, tb);
     }
 
