@@ -8,12 +8,14 @@ import java.util.Random;
 
 public class BotGamer implements GamerImpl, Runnable{
 
-    private BotLevel level;
-    private String name;
+    private final BotLevel level;
+    private final String name;
     private int elixir;
-    private GameManager manager;
-    private Team team;
-    private ArrayList<AbstractBaseCard> allCards;
+    private final GameManager manager;
+    private final Team team;
+    private final ArrayList<AbstractBaseCard> allCards;
+    private final int maxX = 600;
+    private final int maxY = 200;
 
     public BotGamer(GameManager manager, BotLevel level, String name){
         this.level = level;
@@ -28,10 +30,10 @@ public class BotGamer implements GamerImpl, Runnable{
     @Override
     public AbstractBaseCard selectCard() {
         ArrayList<AbstractBaseCard> availableCards = new ArrayList<>();
-        System.out.println(String.format("-------[%d]-------", getElixir()));
+//        System.out.println(String.format("-------[%d]-------", getElixir()));
         for(AbstractBaseCard card : allCards){
             if(card.getCost() < getElixir()){
-                System.out.println(card.getClass().getSimpleName());
+//                System.out.println(card.getClass().getSimpleName());
                 availableCards.add(card);
             }
         }
@@ -44,14 +46,15 @@ public class BotGamer implements GamerImpl, Runnable{
 
     @Override
     public Position selectPos() {
-        return new Position(5,5);
+        Random random = new Random();
+        return new Position(random.nextInt(this.maxX),random.nextInt(this.maxY));
     }
 
     @Override
     public void play() throws InterruptedException{
         Random rand = new Random();
         long randSleepTime = rand.nextInt(4000);
-        Thread.sleep(8000 + randSleepTime);
+        Thread.sleep(100 + randSleepTime);
         Position pos = this.selectPos();
         AbstractBaseCard card = this.selectCard();
         if(card == null)
@@ -83,7 +86,7 @@ public class BotGamer implements GamerImpl, Runnable{
         while (this.isAlive()){
             try {
                 Thread.sleep(2000);
-                updateElixir(1);
+                updateElixir(2);
                 play();
             } catch (InterruptedException e) {
                 e.printStackTrace();

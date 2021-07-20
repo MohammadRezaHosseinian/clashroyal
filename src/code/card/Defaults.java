@@ -6,7 +6,7 @@ public class Defaults {
 
     // create Barbarians features
     protected static final int BARBARIANCE_COST = 5;
-    protected static final URI BARBARIANS_IMAGE = null;
+    protected static final String BARBARIANS_IMAGE = "res//drawable//barbarCard.png";
     protected static final URI BARBARIANCE_SOUND = null;
     protected static final float BARBARIANS_HIT_SPEED = 1.8f;
     protected static final int BARBARIANS_COUNT = 4;
@@ -17,7 +17,7 @@ public class Defaults {
 
     // create Archers features
     protected static final int Archer_COST = 3;
-    protected static final URI Archer_IMAGE = null;
+    protected static final String Archer_IMAGE = "res//drawable//archerCard.png";;
     protected static final URI Archer_SOUND = null;
     protected static final float Archer_HIT_SPEED = 1.2f;
     protected static final int Archer_COUNT = 2;
@@ -28,7 +28,7 @@ public class Defaults {
 
     // create BabyDragon features
     protected static final int BabyDragon_COST = 4;
-    protected static final URI BabyDragon_IMAGE = null;
+    protected static final String BabyDragon_IMAGE = "res//drawable//babyCard.png";;
     protected static final URI BabyDragon_SOUND = null;
     protected static final float BabyDragon_HIT_SPEED = 1.8f;
     protected static final int BabyDragon_COUNT = 1;
@@ -39,7 +39,7 @@ public class Defaults {
 
     // create Wizard features
     protected static final int WIZARD_COST = 5;
-    protected static final URI WIZARD_IMAGE = null;
+    protected static final String WIZARD_IMAGE = "res//drawable//wizardCard.png";
     protected static final URI WIZARD_SOUND = null;
     protected static final float WIZARD_HIT_SPEED = 1.7f;
     protected static final int WIZARD_COUNT = 1;
@@ -50,7 +50,7 @@ public class Defaults {
 
     // create MiniPEKKA features
     protected static final int MiniPEKKA_COST = 4;
-    protected static final URI MiniPEKKA_IMAGE = null;
+    protected static final String MiniPEKKA_IMAGE = "res//drawable//pikaCard.png";
     protected static final URI MiniPEKKA_SOUND = null;
     protected static final float MiniPEKKA_HIT_SPEED = 1.8f;
     protected static final int MiniPEKKA_COUNT = 1;
@@ -61,7 +61,7 @@ public class Defaults {
 
     // create Giant features
     protected static final int Giant_COST = 5;
-    protected static final URI Giant_IMAGE = null;
+    protected static final String Giant_IMAGE = "res//drawable//giantCard.png";
     protected static final URI Giant_SOUND = null;
     protected static final float Giant_HIT_SPEED = 1.5f;
     protected static final int Giant_COUNT = 1;
@@ -72,7 +72,7 @@ public class Defaults {
 
     // create Giant features
     protected static final int Valkyrie_COST = 4;
-    protected static final URI Valkyrie_IMAGE = null;
+    protected static final String Valkyrie_IMAGE = "res//drawable//valkCard.png";
     protected static final URI Valkyrie_SOUND = null;
     protected static final float Valkyrie_HIT_SPEED = 1.5f;
     protected static final int Valkyrie_COUNT = 1;
