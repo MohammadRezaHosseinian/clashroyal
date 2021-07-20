@@ -1,6 +1,5 @@
 package code.card;
 
-import java.net.URI;
 
 public class Barbarians extends Troop{
 

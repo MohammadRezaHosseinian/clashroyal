@@ -1,9 +1,6 @@
 package code.controllers;
 
-import code.heros.Dimension;
-import code.heros.MyHero;
-import code.heros.Position;
-import code.heros.Team;
+import code.heros.*;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -35,14 +32,41 @@ public class FightController {
         this.board.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                MyHero hero = new MyHero(
-                        new Image("res//drawable//hero.png"),
-                        new Position(mouseEvent.getX(), mouseEvent.getY()),
-                        new Dimension(50,50),
-                        100,
-                        Team.UP_SIDE_TEAM
+                Team team = Team.UP_SIDE_TEAM;
+                String uri = "res//drawable//giant.png";
+                if(mouseEvent.isPrimaryButtonDown()){
+                    uri = "res//drawable//giant2.png";
+                    team = Team.DOWN_SIDE_TEAM;
+                }
+                    BarbarianceHero barbar = new BarbarianceHero(new Image(uri),
+                            new Position(mouseEvent.getX(), mouseEvent.getY()),
+                            team
+                    );
+                    ArcherHero archer = new ArcherHero(new Image(uri),
+                            new Position(mouseEvent.getX() , mouseEvent.getY()),
+                            team
+                    );
+                BabyDragonHero babyDragonHero = new BabyDragonHero(new Image(uri),
+                        new Position(mouseEvent.getX() , mouseEvent.getY()),
+                        team
                 );
-                manger.addElement(hero);
+                WizardHero wizard = new WizardHero(new Image(uri),
+                        new Position(mouseEvent.getX() , mouseEvent.getY()),
+                        team
+                );
+                MiniPEKKAHero miniPEKKAHero = new MiniPEKKAHero(new Image(uri),
+                        new Position(mouseEvent.getX() , mouseEvent.getY()),
+                        team
+                );
+                ValkyrieHero valkyrieHero = new ValkyrieHero(new Image(uri),
+                        new Position(mouseEvent.getX() , mouseEvent.getY()),
+                        team
+                );
+                GiantHero giantHero = new GiantHero(new Image(uri),
+                        new Position(mouseEvent.getX() , mouseEvent.getY()),
+                        team
+                );
+                    manger.addElement(giantHero);
 
             }
         });

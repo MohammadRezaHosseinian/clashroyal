@@ -9,4 +9,9 @@ public interface ScreenObject {
     public void updatePos();
     public boolean isAlive();
     public Position getCurrentPos();
+    public boolean canTrackable(ScreenObject enemy);
+    public State getState();
+    public double getDamagePerSec();
+    public void decreaseHp(double enemyDamage);
+    public void setState(State s);
 }

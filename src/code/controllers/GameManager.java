@@ -2,6 +2,7 @@ package code.controllers;
 
 import code.heros.Position;
 import code.heros.ScreenObject;
+import code.heros.State;
 import code.heros.Team;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -15,6 +16,7 @@ public class GameManager implements Runnable{
     private final Position[] DOWN_RIGHT_PLAYER_ROADS;
     private final Position[] UP_LEFT_PLAYER_ROADS;
     private final Position[] UP_RIGHT_PLAYER_ROADS;
+    private final long SLEEP_TIME_PER_MILI_SECOND = 50;
 
     public GameManager(GraphicsContext g, BoardHandler b){
         this.graphics = g;
@@ -65,7 +67,7 @@ public class GameManager implements Runnable{
             setDestinationElements();
             updateElementsPos();
             try {
-                Thread.sleep(60);
+                Thread.sleep(SLEEP_TIME_PER_MILI_SECOND);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -74,7 +76,7 @@ public class GameManager implements Runnable{
 
     private synchronized void checkElementsIsAlive() {
         ScreenObject obj;
-        for(int i=0; i< elements.size(); i++){
+        for(int i = 0; i< elements.size(); i++){
             obj = elements.get(i);
             if(!obj.isAlive())
                 this.elements.remove(obj);
@@ -89,9 +91,30 @@ public class GameManager implements Runnable{
 
     private synchronized void setDestinationElements() {
         for(ScreenObject obj : this.elements){
-            obj.setDestination(findRoad(obj));
-
+            setDestOneElement(obj);
         }
+    }
+
+    private void setDestOneElement(ScreenObject obj) {
+        Team team = obj.getTeam();
+        for(ScreenObject enemy : elements){
+            if(!enemy.getTeam().equals(team)){
+               if(obj.canTrackable(enemy)){
+                   obj.setDestination(enemy.getCurrentPos());
+                   checkFightElement(obj, enemy);
+                   return;
+               }
+            }
+        }
+        obj.setState(State.WALKING);
+        obj.setDestination(findRoad(obj));
+    }
+
+    private void checkFightElement(ScreenObject obj, ScreenObject enemy) {
+        State state = obj.getState();
+        if(state != State.FIGHTING_ENEMY)
+            return;
+        enemy.decreaseHp((obj.getDamagePerSec() * SLEEP_TIME_PER_MILI_SECOND) / 1000);
     }
 
     private void checkConflicts() {
