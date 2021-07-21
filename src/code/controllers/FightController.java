@@ -92,11 +92,19 @@ public class FightController {
     }
 
     public void cardClicked(MouseEvent mouseEvent) {
+
         ImageView iv = (ImageView) mouseEvent.getSource();
-        AbstractBaseCard card =cards.get(cardsPane.getChildren().indexOf(iv));
-        Image img = new Image(card.getImageUri());
-        cardSel.setImage(img);
-        this.selectedCard = card;
+        int index = cardsPane.getChildren().indexOf(iv);
+        try {
+            AbstractBaseCard card =cards.get(index);
+            Image img = new Image(card.getImageUri());
+            cardSel.setImage(img);
+            this.selectedCard = card;
+        }
+        catch (IndexOutOfBoundsException ex){
+            System.out.println("bad card selected");
+        }
+
     }
 
     public void setUser(User u){

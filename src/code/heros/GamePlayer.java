@@ -57,6 +57,7 @@ public class GamePlayer implements Runnable, GamerImpl{
         Position pos = selectPos();
         this.updateElixir(-1 * card.getCost());
         ScreenObject obj = ScreenObjectBuilder.build(card, pos, team);
+        if(obj != null)
         this.manager.addElement(obj);
     }
 

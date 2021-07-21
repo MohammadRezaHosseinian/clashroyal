@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class BotGamer implements GamerImpl, Runnable{
 
-    private final BotLevel level;
+    private BotLevel level;
     private final String name;
     private int elixir;
     private GameManager manager;
@@ -17,13 +17,13 @@ public class BotGamer implements GamerImpl, Runnable{
     private final int maxX = 600;
     private final int maxY = 200;
 
-    public BotGamer(GameManager manager, BotLevel level, String name){
-        this.level = level;
+    public BotGamer(GameManager manager, String name){
+        this.level = BotLevel.LEVEL_1;
         this.name = name;
         this.elixir = 10;
         this.manager = manager;
         this.team = Team.UP_SIDE_TEAM;
-        this.allCards = ScreenObjectBuilder.getAllCards();
+        this.allCards = ScreenObjectBuilder.getAllTroops();
     }
 
     public void setManager(GameManager m){
@@ -95,5 +95,13 @@ public class BotGamer implements GamerImpl, Runnable{
                 e.printStackTrace();
             }
         }
+    }
+
+    public BotLevel getLevel(){
+        return this.level;
+    }
+
+    public void setLevel(BotLevel l){
+        this.level = l;
     }
 }
