@@ -53,13 +53,13 @@ public class BoardHandler {
         this.drawGrounds();
         this.drawRiver();
         this.drawBridges();
-        this.drawUpSideCastles();
-        this.drawDownSideCastles();
-        drawUpSideCastlesQueenLeft();
-        drawUpSideCastlesQueenRight();
-        drawDownSideCastlesQueenLeft();
-        drawDownSideCastlesQueenRight();
-        //this.saveAsImage();
+//        this.drawUpSideCastles();
+//        this.drawDownSideCastles();
+//        drawUpSideCastlesQueenLeft();
+//        drawUpSideCastlesQueenRight();
+//        drawDownSideCastlesQueenLeft();
+//        drawDownSideCastlesQueenRight();
+        this.saveAsImage();
     }
 
     private void saveAsImage() {
