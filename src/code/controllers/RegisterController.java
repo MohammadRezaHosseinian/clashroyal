@@ -8,6 +8,9 @@ import code.exceptions.InvalidPasswordPatternException;
 import code.users.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -17,8 +20,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -193,7 +197,13 @@ public class RegisterController {
                 errorMessage.setTextFill(Color.web("#7f7"));
                 errorMessage.setText(Defaults.REGISTER_SUCCESS_MESSAGE);
                 registerBtn.setDisable(true);
-            } catch (SQLException throwables) {
+                Stage stage = (Stage) this.registerBtn.getScene().getWindow();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/menu.fxml"));
+                Parent parent = loader.load();
+                MenuController controller = loader.getController();
+                controller.setUser(user);
+                stage.setScene(new Scene(parent, 1200, 600));
+            } catch (SQLException | IOException throwables) {
                 errorMessage.setText(throwables.getMessage());
             }
 

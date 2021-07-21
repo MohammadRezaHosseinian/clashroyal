@@ -50,13 +50,15 @@ public class LoginController {
         UsersHandler handler = new UsersHandler();
         try {
             User user = handler.LoginUser(usernameOrEmailText, passwordText);
-            System.out.println(String.format("user %s login succesful", user.getEmail()));
+            System.out.println(String.format("user %s login successful", user.getEmail()));
             Stage stage = (Stage) this.gotoRegister.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/fight.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/menu.fxml"));
             Parent parent = loader.load();
-            stage.setScene(new Scene(parent));
+            MenuController controller = loader.getController();
+            controller.setUser(user);
+            stage.setScene(new Scene(parent, 1200, 600));
         } catch (SQLException | NotFoundUserException | IOException throwables) {
-            throwables.printStackTrace();
+            System.out.println(throwables.getMessage());
         }
 
     }
