@@ -11,7 +11,7 @@ public class BotGamer implements GamerImpl, Runnable{
     private final BotLevel level;
     private final String name;
     private int elixir;
-    private final GameManager manager;
+    private GameManager manager;
     private final Team team;
     private final ArrayList<AbstractBaseCard> allCards;
     private final int maxX = 600;
@@ -26,6 +26,9 @@ public class BotGamer implements GamerImpl, Runnable{
         this.allCards = ScreenObjectBuilder.getAllCards();
     }
 
+    public void setManager(GameManager m){
+        this.manager = m;
+    }
 
     @Override
     public AbstractBaseCard selectCard() {

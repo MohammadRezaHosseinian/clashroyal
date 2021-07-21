@@ -1,5 +1,6 @@
 package code.heros;
 
+import code.castles.BaseCastle;
 import javafx.scene.canvas.GraphicsContext;
 
 public interface ScreenObject {
@@ -14,4 +15,5 @@ public interface ScreenObject {
     public double getDamagePerSec();
     public void decreaseHp(double enemyDamage);
     public void setState(State s);
+    public boolean canTrackableCastle(BaseCastle enemy);
 }

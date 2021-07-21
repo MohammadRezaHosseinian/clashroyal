@@ -38,11 +38,11 @@ public class GreetingController {
     public void login(ActionEvent actionEvent) throws IOException {
         Button btn = (Button) actionEvent.getSource();
         System.out.println(btn.getId());
-        Stage statge = (Stage) btn.getScene().getWindow();
+        Stage stage = (Stage) btn.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/login.fxml"));
         Parent parent = loader.load();
         LoginController lc = loader.getController();
-        statge.setScene(new Scene(parent));
+        stage.setScene(new Scene(parent));
     }
 
 

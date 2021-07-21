@@ -1,5 +1,6 @@
 package code.heros;
 
+import code.castles.BaseCastle;
 import code.controllers.Defaults;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
@@ -103,5 +104,22 @@ public abstract class BaseHero implements ScreenObject {
     @Override
     public void setState(State e){
         this.state = e;
+    }
+
+    @Override
+    public boolean canTrackableCastle(BaseCastle enemy){
+        double tolerance = Defaults.TILE_WIDTH * 1.9;
+        double distanceFromEnemy = enemy.getDistance(this);
+        boolean returnValue = tolerance * this.range > distanceFromEnemy;
+        if(returnValue){
+            state = State.TRACKING_CASTLE;
+            if(distanceFromEnemy < fightingRange * tolerance) {
+                state = State.FIGHTING_CASTLE;
+            }
+        }
+        else{
+            state = State.WALKING;
+        }
+        return returnValue;
     }
 }
