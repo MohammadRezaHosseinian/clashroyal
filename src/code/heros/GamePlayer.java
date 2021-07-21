@@ -25,6 +25,11 @@ public class GamePlayer implements Runnable, GamerImpl{
     }
 
     public void choosePos(Position pos){
+        if(pos.getY() < 280){
+            this.selectedPos = null;
+            return;
+        }
+
         this.selectedPos = pos;
     }
 

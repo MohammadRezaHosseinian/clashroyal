@@ -12,9 +12,9 @@ public class Main extends Application {
 
     @Override
     public void start( Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../../res/fxml/fight.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../../res/fxml/menu.fxml"));
         primaryStage.setTitle("AUT Clash Royal");
-        primaryStage.setScene(new Scene(root, 1200,900));
+        primaryStage.setScene(new Scene(root, 1200,600));
         primaryStage.show();
 
     }

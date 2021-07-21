@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 public class ArcherHero extends BaseHero implements Walkable{
 
     public ArcherHero(Image img, Position position, Team team) {
-        super(img, position, new Dimension(25,25), 125, team, 5, 2, 1.2, 33);
+        super(img, position, new Dimension(35,40), 125, team, 5, 2, 1.2, 33);
     }
 
     @Override

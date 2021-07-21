@@ -189,7 +189,7 @@ public class BoardHandler {
 
     public Position getRightDownSideCastlePos(){
         double CastleWidth = this.CANVAS_WIDTH /2 + this.CANVAS_WIDTH / 4;
-        double CastleHeight = this.CANVAS_HEIGHT + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
+        double CastleHeight = this.CANVAS_HEIGHT - this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
         return new Position(CastleWidth,CastleHeight);
 
     }

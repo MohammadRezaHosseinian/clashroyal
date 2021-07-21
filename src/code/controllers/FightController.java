@@ -2,12 +2,14 @@ package code.controllers;
 
 import code.card.AbstractBaseCard;
 import code.heros.*;
+import code.users.User;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -33,44 +35,24 @@ public class FightController {
     public ImageView card_8;
     public ImageView cardSel;
     public Label elixirVal;
+    public Button startGameBtn;
     private BoardHandler bHandler;
     private GameManager manger;
     private ArrayList<AbstractBaseCard> cards;
     private AbstractBaseCard selectedCard;
-
+    private User user;
+    private BotGamer bot;
 
     @FXML
     public void initialize() {
-        this.cards = ScreenObjectBuilder.getAllCards();
+        this.setBackgroundParent();
+    }
+
+    private void setBackgroundParent() {
         BackgroundImage bi = new BackgroundImage(new Image("res//drawable//back.jpg"),
                 BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT
         );
         this.parent.setBackground(new Background(bi));
-        this.bHandler = new BoardHandler(this.board);
-        this.manger = new GameManager(board.getGraphicsContext2D(),bHandler);
-        this.placementCards();
-        new Thread(manger).start();
-
-        GamePlayer player = new GamePlayer(null,manger);
-        new Thread(player).start();
-
-        this.board.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                player.chooseCard(selectedCard);
-                player.choosePos(new Position(mouseEvent.getX(), mouseEvent.getY()));
-                try {
-                    player.play();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        BotGamer bot = new BotGamer(manger, BotLevel.EASY, "mamoosh");
-
-        new Thread(bot).start();
-        setupElixirTimerTask(player);
     }
 
     private void setupElixirTimerTask(GamePlayer p) {
@@ -104,8 +86,9 @@ public class FightController {
         }
     }
 
-    public void setCards(ArrayList<AbstractBaseCard> cards){
-        this.cards = cards;
+    public void setCards(ArrayList<AbstractBaseCard> c){
+        this.cards = c;
+        this.placementCards();
     }
 
     public void cardClicked(MouseEvent mouseEvent) {
@@ -114,5 +97,41 @@ public class FightController {
         Image img = new Image(card.getImageUri());
         cardSel.setImage(img);
         this.selectedCard = card;
+    }
+
+    public void setUser(User u){
+        this.user = u;
+    }
+
+    public void setBot(BotGamer b){
+        System.out.println("thick");
+        this.bot = b;
+    }
+
+    public void startGame(MouseEvent mouseEvent) {
+        this.startGameBtn.setVisible(false);
+//        this.cards = ScreenObjectBuilder.getAllCards();
+        this.bHandler = new BoardHandler(this.board);
+        this.manger = new GameManager(board.getGraphicsContext2D(),bHandler);
+        new Thread(manger).start();
+
+        GamePlayer player = new GamePlayer(null,manger);
+        new Thread(player).start();
+
+        this.board.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                player.chooseCard(selectedCard);
+                player.choosePos(new Position(mouseEvent.getX(), mouseEvent.getY()));
+                try {
+                    player.play();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        this.bot.setManager(manger);
+        new Thread(this.bot).start();
+        setupElixirTimerTask(player);
     }
 }

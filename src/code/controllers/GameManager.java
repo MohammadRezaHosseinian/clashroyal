@@ -134,6 +134,9 @@ public class GameManager implements Runnable{
                 e.printStackTrace();
             }
         }
+        checkElementsIsAlive();
+        drawElements();
+        System.out.println(getWinner().toString());
     }
 
     private synchronized void checkElementsIsAlive() {
@@ -286,5 +289,14 @@ public class GameManager implements Runnable{
         if(current.getY() > this.DOWN_LEFT_PLAYER_ROADS[2].getY() && upSideLeftQueenCastle.isAlive())
             return DOWN_LEFT_PLAYER_ROADS[2];
         return DOWN_LEFT_PLAYER_ROADS[3];
+    }
+
+    public Team getWinner(){
+        if(! (this.downSideKingCastle.isAlive() && this.upSideKingCastle.isAlive())) {
+            if (!this.downSideKingCastle.isAlive())
+                return Team.UP_SIDE_TEAM;
+            return Team.DOWN_SIDE_TEAM;
+        }
+        return null;
     }
 }
