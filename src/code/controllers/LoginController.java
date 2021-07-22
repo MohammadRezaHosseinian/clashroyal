@@ -30,6 +30,7 @@ import java.sql.SQLException;
 
 public class LoginController {
 
+    public Label errorMessage;
     @FXML
     private AnchorPane parent;
     @FXML
@@ -64,7 +65,7 @@ public class LoginController {
             controller.setUser(user);
             stage.setScene(new Scene(parent, 1200, 600));
         } catch (SQLException | NotFoundUserException | IOException throwables) {
-            System.out.println(throwables.getMessage());
+            errorMessage.setText("نام کاربری و / یا رمز عبور نامعتبر است!");
         }
 
     }

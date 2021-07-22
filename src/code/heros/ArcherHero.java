@@ -37,11 +37,11 @@ public class ArcherHero extends BaseHero implements Walkable{
         this.position.setX(x + sign(destination.getX() - x));
         this.position.setY(y + sign(destination.getY() - y));
     }
-    public int sign(double i){
+    public double sign(double i){
         if(i < 0)
-            return -1;
+            return -.5;
         if(i > 0)
-            return 1;
+            return .5;
         return 0;
     }
 }

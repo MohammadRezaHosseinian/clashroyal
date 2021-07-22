@@ -11,7 +11,7 @@ import javafx.scene.image.Image;
 public class WizardHero extends BaseHero implements Walkable{
 
     public WizardHero(Image img, Position position,Team team) {
-        super(img, position, new Dimension(60,70) ,340, team, 5,1.5, 1.7, 130);
+        super(img, position, new Dimension(60,70) ,340, team, 3,1.5, 1.7, 130);
     }
 
     @Override
@@ -38,11 +38,11 @@ public class WizardHero extends BaseHero implements Walkable{
         this.position.setX(x + sign(destination.getX() - x));
         this.position.setY(y + sign(destination.getY() - y));
     }
-    public int sign(double i){
+    public double sign(double i){
         if(i < 0)
-            return -1;
+            return -.5;
         if(i > 0)
-            return 1;
+            return .5;
         return 0;
     }
 }

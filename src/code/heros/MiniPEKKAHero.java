@@ -10,7 +10,7 @@ import javafx.scene.image.Image;
 public class MiniPEKKAHero extends BaseHero implements Walkable{
 
     public MiniPEKKAHero(Image img, Position position, Team team) {
-        super(img, position, new Dimension(30,30),600, team, 1, 1, 1.8,325);
+        super(img, position, new Dimension(30,30),600, team, 1, 1, 1.8,170);
     }
 
     @Override

@@ -24,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -214,5 +215,14 @@ public class RegisterController {
             }
 
         }
+    }
+
+    public void gotoGreeting(MouseEvent mouseEvent) throws IOException {
+        Button btn = (Button) mouseEvent.getSource();
+        System.out.println(btn.getId());
+        Stage stage = (Stage) btn.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/greeting.fxml"));
+        Parent parent = loader.load();
+        stage.setScene(new Scene(parent));
     }
 }

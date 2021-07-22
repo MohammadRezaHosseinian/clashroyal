@@ -15,6 +15,7 @@ import code.heros.ScreenObject;
 import code.heros.State;
 import code.heros.Team;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import java.util.ArrayList;
 
@@ -34,14 +35,15 @@ public class GameManager implements Runnable{
     private  BaseCastle upSideRightQueenCastle;
     private  BaseCastle downSideLeftQueenCastle;
     private  BaseCastle downSideRightQueenCastle;
+    private Button playAgain;
 
-
-    public GameManager(GraphicsContext g, BoardHandler b){
+    public GameManager(GraphicsContext g, BoardHandler b, Button btn){
         this.graphics = g;
         this.elements = new ArrayList<>();
         this.castles = new ArrayList<>();
         this.handler = b;
         initCastles();
+        this.playAgain = btn;
         this.DOWN_LEFT_PLAYER_ROADS = new Position[]{
                 handler.getLeftDownSideBridgePos(),
                 handler.getLeftUpSideBridgePos(),
@@ -140,9 +142,30 @@ public class GameManager implements Runnable{
                 e.printStackTrace();
             }
         }
+        finalizeGame();
+
+    }
+
+    private void finalizeGame() {
         checkElementsIsAlive();
         drawElements();
         System.out.println(getWinner().toString());
+        int destroiedCastles = 3;
+        for(BaseCastle c : castles){
+            if(c.getTeam().equals(Team.UP_SIDE_TEAM)) {
+                destroiedCastles--;
+            }
+        }
+        Image img;
+        if(getWinner().equals(Team.DOWN_SIDE_TEAM)){
+            img = new Image("res//drawable//star3.png");
+        }
+        else{
+            img = new Image(String.format("res//drawable//star%d.png", destroiedCastles));
+        }
+        this.graphics.drawImage(img,0,0);
+        System.out.println("destroied :" + destroiedCastles);
+        this.playAgain.setVisible(true);
     }
 
     private synchronized void checkElementsIsAlive() {
