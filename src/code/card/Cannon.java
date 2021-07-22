@@ -2,6 +2,12 @@ package code.card;
 
 import java.net.URI;
 
+/*
+ **
+ * this class for create Cannon card
+ * *
+ */
+
 public  class Cannon extends Building implements CardImpl{
 
 
@@ -18,6 +24,7 @@ public  class Cannon extends Building implements CardImpl{
     public void playCard(){}
 
     @Override
+    // this method for upgrade cannon card
     public void upgradeCard(Level l) {
 
     }

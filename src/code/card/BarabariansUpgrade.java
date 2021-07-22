@@ -1,5 +1,9 @@
 package code.card;
-
+/*
+ **
+ * this class for Upgrade barbarians card
+ * *
+ */
 public class BarabariansUpgrade extends TroopUpgrade{
 
 

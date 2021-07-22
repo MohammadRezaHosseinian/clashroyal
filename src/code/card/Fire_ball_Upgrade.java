@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for Upgrade fireBall card
+ * *
+ */
 public class Fire_ball_Upgrade extends TroopUpgrade{
 
     public Fire_ball_Upgrade(Level level) {

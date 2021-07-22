@@ -2,6 +2,11 @@ package code.card;
 
 import java.net.URI;
 
+/*
+ **
+ * this class for create Rage card
+ * *
+ */
 public class Rage extends Spell{
 
     private double radius = 0;

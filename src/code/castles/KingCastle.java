@@ -1,5 +1,10 @@
 package code.castles;
 
+/*
+ **
+ * this class create king castle
+ **
+ */
 import code.heros.Dimension;
 import code.heros.Position;
 import code.heros.Team;

@@ -1,7 +1,12 @@
 package code.card;
-
+/*
+**
+* in this class assign features of every card
+**
+ */
 public class Builders {
 
+// in this class assign features of Barbarians
     public static TroopBuilder CreateBarbariansBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.BARBARIANS_HIT_SPEED);
@@ -14,6 +19,7 @@ public class Builders {
         return tb;
     }
 
+// in this class assign features of Archer
     public static TroopBuilder CreateArcherBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.Archer_HIT_SPEED);
@@ -26,6 +32,7 @@ public class Builders {
         return tb;
     }
 
+// in this class assign features of BabyDragon
     public static TroopBuilder CreateBabyDragonBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.BabyDragon_HIT_SPEED);
@@ -38,6 +45,7 @@ public class Builders {
         return tb;
     }
 
+// in this class assign features of Wizard
     public static TroopBuilder CreateWizardBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.WIZARD_HIT_SPEED);
@@ -50,6 +58,7 @@ public class Builders {
         return tb;
     }
 
+// in this class assign features of MiniPEKKA
     public static TroopBuilder CreateMiniPEKKABuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.MiniPEKKA_HIT_SPEED);
@@ -62,6 +71,7 @@ public class Builders {
         return tb;
     }
 
+// in this class assign features of Giant
     public static TroopBuilder CreateGiantBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.Giant_HIT_SPEED);
@@ -74,6 +84,7 @@ public class Builders {
         return tb;
     }
 
+// in this class assign features of Valkyrie
     public static TroopBuilder CreateValkyrieBuilder(){
         TroopBuilder tb = new TroopBuilder();
         tb.addHitSpeed(Defaults.Valkyrie_HIT_SPEED);

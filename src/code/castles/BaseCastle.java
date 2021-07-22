@@ -1,5 +1,11 @@
 package code.castles;
 
+/*
+**
+* this class helps for create castles
+**
+ */
+
 import code.heros.Dimension;
 import code.heros.Position;
 import code.heros.ScreenObject;
@@ -39,10 +45,12 @@ public class BaseCastle {
         g.drawImage(img, pos.getX(), pos.getY(), dim.getWidth(), dim.getHeight());
     }
 
+    // check castle alive
     public boolean isAlive(){
         return this.hp > 0;
     }
 
+    // check castle can shoot to enemy or Not
     public boolean canShootEnemy(ScreenObject enemy){
         if(this.hp == this.initialHp)
             return false;
@@ -61,6 +69,7 @@ public class BaseCastle {
         return Math.sqrt(dx*dx + dy*dy);
     }
 
+    // decrease the hp of castles
     public void decreaseHp(double d){
         this.hp -= d;
     }

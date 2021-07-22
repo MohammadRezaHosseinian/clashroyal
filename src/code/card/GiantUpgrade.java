@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for Upgrade giant card
+ * *
+ */
 public class GiantUpgrade extends TroopUpgrade{
 
     public GiantUpgrade(Level level) {

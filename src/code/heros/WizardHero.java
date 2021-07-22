@@ -1,5 +1,11 @@
 package code.heros;
 
+/*
+ **
+ * this class create wizard hero
+ **
+ */
+
 import javafx.scene.image.Image;
 
 public class WizardHero extends BaseHero implements Walkable{

@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for create Archer card
+ * *
+ */
 public class Valkyrie extends Troop{
 
     public Valkyrie(TroopBuilder tb) {
@@ -12,6 +17,7 @@ public class Valkyrie extends Troop{
     }
 
     @Override
+    // this method for upgrade valkyrie card
     public void upgradeCard(Level l) {
         ValkyrieUpgrade vu = new ValkyrieUpgrade(l);
         this.hp = vu.hp;

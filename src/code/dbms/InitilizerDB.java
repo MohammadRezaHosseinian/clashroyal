@@ -1,5 +1,11 @@
 package code.dbms;
 
+/*
+ **
+ * this class initillize data in data base
+ **
+ */
+
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;

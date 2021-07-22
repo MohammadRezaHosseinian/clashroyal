@@ -1,8 +1,13 @@
 package code.dbms;
 
+/*
+ **
+ * this class helps for handle user data
+ **
+ */
+
 import code.exceptions.NotFoundUserException;
 import code.users.User;
-
 import java.sql.*;
 
 public class UsersHandler {

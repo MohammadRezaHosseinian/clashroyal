@@ -1,5 +1,11 @@
 package code.heros;
 
+/*
+ **
+ * this class build screenObject
+ **
+ */
+
 import code.card.*;
 import javafx.scene.image.Image;
 

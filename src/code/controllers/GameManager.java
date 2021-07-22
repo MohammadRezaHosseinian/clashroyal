@@ -1,5 +1,12 @@
 package code.controllers;
 
+/*
+ **
+ * this class for manage the game
+ * this class implement runnable
+ **
+ */
+
 import code.castles.BaseCastle;
 import code.castles.KingCastle;
 import code.castles.QueenCastle;
@@ -9,7 +16,6 @@ import code.heros.State;
 import code.heros.Team;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-
 import java.util.ArrayList;
 
 public class GameManager implements Runnable{

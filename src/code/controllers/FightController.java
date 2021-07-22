@@ -1,5 +1,11 @@
 package code.controllers;
 
+/*
+ **
+ * this class helps for handle game
+ **
+ */
+
 import code.card.AbstractBaseCard;
 import code.heros.*;
 import code.users.User;
@@ -91,6 +97,7 @@ public class FightController {
         this.placementCards();
     }
 
+    // choose card from choosen card
     public void cardClicked(MouseEvent mouseEvent) {
 
         ImageView iv = (ImageView) mouseEvent.getSource();
@@ -116,16 +123,15 @@ public class FightController {
         this.bot = b;
     }
 
+    // mouseEvent handler for start game
     public void startGame(MouseEvent mouseEvent) {
         this.startGameBtn.setVisible(false);
 //        this.cards = ScreenObjectBuilder.getAllCards();
         this.bHandler = new BoardHandler(this.board);
         this.manger = new GameManager(board.getGraphicsContext2D(),bHandler);
         new Thread(manger).start();
-
         GamePlayer player = new GamePlayer(null,manger);
         new Thread(player).start();
-
         this.board.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {

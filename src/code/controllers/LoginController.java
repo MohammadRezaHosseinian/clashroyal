@@ -1,5 +1,11 @@
 package code.controllers;
 
+/*
+ **
+ * this class helps for handle login page
+ **
+ */
+
 import code.dbms.UsersHandler;
 import code.exceptions.NotFoundUserException;
 import code.users.User;

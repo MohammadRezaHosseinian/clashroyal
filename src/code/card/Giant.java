@@ -1,5 +1,11 @@
 package code.card;
 
+
+/*
+ **
+ * this class for create Giant card
+ * *
+ */
 public class Giant extends Troop{
 
     public Giant(TroopBuilder tb) {
@@ -12,6 +18,7 @@ public class Giant extends Troop{
     }
 
     @Override
+    // this method for upgrade giant card
     public void upgradeCard(Level l) {
         GiantUpgrade gu = new GiantUpgrade(l);
         this.hp = gu.hp;

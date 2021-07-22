@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+**
+* this class for create Arrows card
+* *
+ */
 import java.net.URI;
 
 public class Arrows extends Spell{

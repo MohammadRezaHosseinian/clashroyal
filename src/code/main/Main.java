@@ -1,5 +1,13 @@
 package code.main;
 
+/*
+ **
+ *                 Thursday, July 22, 2021
+ * MohammadReza Hosseinian and Mahdi Mansouriehkhah
+ * ClashRoyal Game FinalProject From AmirKabir University
+ **
+ */
+
 import code.dbms.InitilizerDB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

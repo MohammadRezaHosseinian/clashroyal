@@ -1,5 +1,11 @@
 package code.heros;
 
+/*
+ **
+ * this class handle gamer
+ **
+ */
+
 import code.card.AbstractBaseCard;
 import code.controllers.GameManager;
 import code.users.User;
@@ -20,10 +26,12 @@ public class GamePlayer implements Runnable, GamerImpl{
         this.team = Team.DOWN_SIDE_TEAM;
     }
 
+    // get chosen card
     public void chooseCard(AbstractBaseCard card){
         this.selectedCard = card;
     }
 
+    // get chosen position
     public void choosePos(Position pos){
         if(pos.getY() < 280){
             this.selectedPos = null;
@@ -34,6 +42,7 @@ public class GamePlayer implements Runnable, GamerImpl{
     }
 
     @Override
+    // set selected card
     public AbstractBaseCard selectCard() {
         return this.selectedCard;
     }

@@ -1,5 +1,10 @@
 package code.heros;
 
+/*
+ **
+ * this class create screenObject
+ **
+ */
 import code.castles.BaseCastle;
 import javafx.scene.canvas.GraphicsContext;
 

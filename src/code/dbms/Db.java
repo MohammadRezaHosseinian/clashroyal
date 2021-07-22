@@ -1,5 +1,11 @@
 package code.dbms;
 
+/*
+ **
+ * in this class connect to data base
+ **
+ */
+
 import java.sql.*;
 
 

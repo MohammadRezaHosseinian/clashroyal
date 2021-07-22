@@ -1,5 +1,11 @@
 package code.controllers;
 
+/*
+ **
+ * this class helps for handle main menu
+ **
+ */
+
 import code.card.AbstractBaseCard;
 import code.heros.BotGamer;
 import code.users.User;

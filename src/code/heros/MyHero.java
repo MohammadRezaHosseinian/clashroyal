@@ -1,5 +1,10 @@
 package code.heros;
 
+/*
+ **
+ * this class create hero
+ **
+ */
 import javafx.scene.image.Image;
 
 public class MyHero extends BaseHero implements  Walkable{

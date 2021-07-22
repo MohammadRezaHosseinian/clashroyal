@@ -1,5 +1,10 @@
 package code.heros;
 
+/*
+ **
+ * this class create miniPEKKA hero
+ **
+ */
 import javafx.scene.image.Image;
 
 public class MiniPEKKAHero extends BaseHero implements Walkable{

@@ -1,5 +1,11 @@
 package code.heros;
 
+/*
+ **
+ * this enum specify bot level
+ **
+ */
+
 public enum BotLevel {
     LEVEL_1,
     LEVEL_2,

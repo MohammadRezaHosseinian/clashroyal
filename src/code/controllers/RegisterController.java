@@ -1,5 +1,11 @@
 package code.controllers;
 
+/*
+ **
+ * this class helps for handle register page
+ **
+ */
+
 import code.dbms.UsersHandler;
 import code.exceptions.InvalidConfirmPasswordException;
 import code.exceptions.InvalidEmailException;

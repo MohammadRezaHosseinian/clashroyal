@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for Upgrade miniPEKKA card
+ * *
+ */
 public class MiniPEKKAUpgrade extends TroopUpgrade{
 
     public MiniPEKKAUpgrade(Level level) {

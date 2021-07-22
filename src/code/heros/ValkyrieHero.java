@@ -1,5 +1,11 @@
 package code.heros;
 
+/*
+ **
+ * this class create valkyrie hero
+ **
+ */
+
 import javafx.scene.image.Image;
 
 public class ValkyrieHero extends BaseHero implements Walkable {

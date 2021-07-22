@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for create FireBall card
+ * *
+ */
 import java.net.URI;
 
 public class Fire_ball extends Spell{

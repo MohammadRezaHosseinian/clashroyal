@@ -1,5 +1,10 @@
 package code.controllers;
 
+/*
+ **
+ * this class helps for handle main map
+ **
+ */
 import code.heros.Position;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.SnapshotParameters;
@@ -32,6 +37,7 @@ public class BoardHandler {
         this.img = new Image("res//drawable//base.png");
     }
 
+    // draw tiles of map
     private void drawGrounds(){
         Image tileImage;
         int randomGroundImage;
@@ -45,10 +51,12 @@ public class BoardHandler {
         }
     }
 
+    // set canvas for base of map
     public void drawBase(){
         this.graphics.drawImage(this.img,0,0,this.CANVAS_WIDTH, this.CANVAS_HEIGHT);
     }
 
+    // set background of map
     public void initBoard(){
         this.drawGrounds();
         this.drawRiver();
@@ -62,6 +70,7 @@ public class BoardHandler {
         this.saveAsImage();
     }
 
+    // save canvas image for continue of game
     private void saveAsImage() {
 
             WritableImage wi = new WritableImage((int)CANVAS_WIDTH,(int)CANVAS_HEIGHT);
@@ -75,12 +84,14 @@ public class BoardHandler {
             }
     }
 
+    // draw down side king castle in map
     private void drawDownSideCastles() {
         double kingCastleWidth = this.CANVAS_WIDTH / 2;
         double kingCastleHeight = this.CANVAS_HEIGHT - this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
         this.graphics.drawImage(new Image(Defaults.CASTLES_URIS[1]), kingCastleWidth, kingCastleHeight, Defaults.KING_CASTLE_WIDTH, Defaults.KING_CASTLE_HEIGHT);
     }
 
+    // draw down side queen castle in left
     private void drawDownSideCastlesQueenLeft() {
         double kingCastleWidth = this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = this.CANVAS_HEIGHT -  this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
@@ -89,6 +100,7 @@ public class BoardHandler {
 
     }
 
+    // draw down side queen castle in right
     private void drawDownSideCastlesQueenRight() {
         double kingCastleWidth = this.CANVAS_WIDTH / 2 + this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = this.CANVAS_HEIGHT - this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT - Defaults.KING_CASTLE_HEIGHT;
@@ -97,6 +109,7 @@ public class BoardHandler {
 
     }
 
+    // draw bridges in map
     private void drawBridges() {
         double startRiverHeight = this.CANVAS_HEIGHT / 2 - this.CANVAS_HEIGHT * Defaults.RIVER_PERCENT_PER_MAP_SIDE - (double) Defaults.TILE_HEIGHT / 2;
         double endRiverHeight = this.CANVAS_HEIGHT / 2 + this.CANVAS_HEIGHT * Defaults.RIVER_PERCENT_PER_MAP_SIDE - (double) Defaults.TILE_HEIGHT / 2;
@@ -115,6 +128,7 @@ public class BoardHandler {
 
     }
 
+    // draw up side king castle in map
     private void drawUpSideCastles() {
         double kingCastleWidth = this.CANVAS_WIDTH / 2;
         double kingCastleHeight = this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
@@ -123,6 +137,7 @@ public class BoardHandler {
 
     }
 
+    // draw up side queen castle in left
     private void drawUpSideCastlesQueenLeft() {
         double kingCastleWidth = this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = 0 + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
@@ -131,6 +146,7 @@ public class BoardHandler {
 
     }
 
+    // draw up side queen castle in right
     private void drawUpSideCastlesQueenRight() {
         double kingCastleWidth = this.CANVAS_WIDTH / 2 + this.CANVAS_WIDTH / 4 ;
         double kingCastleHeght = 0 + this.CANVAS_HEIGHT * Defaults.CASTLE_ROW_PERCENT;
@@ -139,6 +155,7 @@ public class BoardHandler {
 
     }
 
+    // draw river in map
     private void drawRiver() {
         Image tileImage;
         int randomGroundImage;

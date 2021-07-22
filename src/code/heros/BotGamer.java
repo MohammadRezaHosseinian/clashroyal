@@ -1,5 +1,10 @@
 package code.heros;
 
+/*
+ **
+ * this class handle bot game
+ **
+ */
 import code.card.AbstractBaseCard;
 import code.controllers.GameManager;
 
