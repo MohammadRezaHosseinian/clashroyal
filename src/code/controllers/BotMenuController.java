@@ -1,5 +1,10 @@
 package code.controllers;
 
+/*
+**
+* this class control bot menu
+**
+ */
 import code.card.AbstractBaseCard;
 import code.heros.BotGamer;
 import code.heros.BotLevel;
@@ -44,11 +49,13 @@ public class BotMenuController {
         updateLevelVal(b);
     }
 
+    // update level of bot
     private void updateLevelVal(BotGamer b){
         if(b != null)
             this.levelVal.setText(b.getLevel().toString());
     }
 
+    // change bot level
     public void changeLevel(MouseEvent mouseEvent) {
         Button btn = (Button) mouseEvent.getSource();
         int index = buttonContainer.getChildren().indexOf(btn);
@@ -69,6 +76,7 @@ public class BotMenuController {
         }
     }
 
+    // go to menu page
     public void gotoMenu(MouseEvent mouseEvent) throws IOException {
         Stage stage = (Stage) parent.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/menu.fxml"));

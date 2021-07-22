@@ -1,5 +1,9 @@
 package code.card;
-
+/*
+**
+* this class create Barbarians card
+**
+ */
 
 public class Barbarians extends Troop{
 
@@ -14,6 +18,7 @@ public class Barbarians extends Troop{
     }
 
     @Override
+    // this method for upgrade level of card
     public void upgradeCard(Level l) {
         BarabariansUpgrade bu = new BarabariansUpgrade(l);
         bu.upgrade();

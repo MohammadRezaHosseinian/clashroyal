@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for Upgrade infernoTower card
+ * *
+ */
 public class Inferno_Tower_Upgrade extends TroopUpgrade{
 
     public Inferno_Tower_Upgrade(Level level) {

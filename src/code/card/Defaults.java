@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+**
+* this class for CONSTANT variable
+**
+ */
 import java.net.URI;
 
 public class Defaults {

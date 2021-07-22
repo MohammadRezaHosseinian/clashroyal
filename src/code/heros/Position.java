@@ -1,5 +1,10 @@
 package code.heros;
 
+/*
+ **
+ * this class create position of heros
+ **
+ */
 public class Position {
     private double x;
     private double y;

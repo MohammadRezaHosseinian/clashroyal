@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+* *
+*  this class for Upgrade Valkyrie card
+**
+*/
 public class ValkyrieUpgrade extends TroopUpgrade{
 
     public ValkyrieUpgrade(Level level) {

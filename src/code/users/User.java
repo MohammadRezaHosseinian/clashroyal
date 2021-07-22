@@ -1,5 +1,11 @@
 package code.users;
 
+/*
+**
+* in this class set User data for game
+**
+ */
+
 public class User {
 
     private String password;

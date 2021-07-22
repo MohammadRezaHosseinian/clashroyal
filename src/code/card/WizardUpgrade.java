@@ -1,4 +1,9 @@
 package code.card;
+/*
+**
+* this class for Upgrade wizard card
+* *
+ */
 
 public class WizardUpgrade extends TroopUpgrade{
 

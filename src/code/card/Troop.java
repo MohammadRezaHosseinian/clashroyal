@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for create Troop cards
+ * *
+ */
 import java.net.URI;
 
 public abstract class Troop extends AbstractBaseCard implements CardImpl{
@@ -55,5 +60,6 @@ public abstract class Troop extends AbstractBaseCard implements CardImpl{
     public abstract void playCard();
 
     @Override
+    // this method for upgrade Troop cards
     public abstract void upgradeCard(Level l);
 }

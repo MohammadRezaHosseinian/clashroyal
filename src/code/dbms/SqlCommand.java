@@ -1,5 +1,11 @@
 package code.dbms;
 
+/*
+ **
+ * this class helps for handle SQL commands
+ **
+ */
+
 public class SqlCommand {
     private final String DB_NAME = "";
     private static final String USER_TABLE_NAME = "USERS";

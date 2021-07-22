@@ -1,6 +1,10 @@
 package code.card;
 
-import java.net.URI;
+/*
+ **
+ * this class for Upgrade cannon card
+ * *
+ */
 
 public class Cannon_Upgrade extends TroopUpgrade{
 

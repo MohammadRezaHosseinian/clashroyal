@@ -1,5 +1,11 @@
 package code.controllers;
 
+/*
+ **
+ * this class helps for handle greeting page
+ **
+ */
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

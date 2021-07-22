@@ -6,16 +6,27 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.98" prefHeight="578.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="code.controllers.LoginController">
 
-      <Pane layoutX="296.0" layoutY="92.0" opacity="0.94" prefHeight="332.0" prefWidth="345.0" style="-fx-background-color: #FFF; -fx-border-color: #888;">
+      <Pane layoutX="360.0" layoutY="92.0" opacity="0.94" prefHeight="332.0" prefWidth="345.0" style="-fx-background-color: #FFF; -fx-border-color: #888;">
 
             <TextField fx:id="usernameOrEmail" alignment="CENTER" layoutX="75.0" layoutY="83.0" prefHeight="42.0" prefWidth="170.0" promptText="نام کاربری/ایمیل" />
             <PasswordField fx:id="password" alignment="CENTER" layoutX="75.0" layoutY="166.0" prefHeight="42.0" prefWidth="170.0" promptText="گذرواژه" />
             <Button fx:id="loginBtn" layoutX="107.0" layoutY="240.0" mnemonicParsing="false" onAction="#loginHandler" prefHeight="36.0" prefWidth="107.0" text="ورود" />
-      <Label onMouseClicked="#gotoRegisterClicked" fx:id="gotoRegister" layoutX="238.0" layoutY="288.0" prefHeight="16.0" prefWidth="71.0" text="ثبت نام" textFill="#1d4db5" />
+      <Label fx:id="gotoRegister" layoutX="238.0" layoutY="288.0" onMouseClicked="#gotoRegisterClicked" prefHeight="16.0" prefWidth="71.0" text="ثبت نام" textFill="#1d4db5" />
+      <Label alignment="CENTER" layoutX="11.0" layoutY="10.0" prefHeight="48.0" prefWidth="329.0" text="ورود" textFill="#2333c6">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
 
       </Pane>
+   <Label fx:id="errorMessage" alignment="CENTER" layoutX="364.0" layoutY="33.0" prefHeight="48.0" prefWidth="329.0" text=" " textFill="#781a22">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
 
 </AnchorPane>

@@ -1,5 +1,11 @@
 package code.controllers;
 
+/*
+ **
+ * this class helps for handle game
+ **
+ */
+
 import code.card.AbstractBaseCard;
 import code.heros.*;
 import code.users.User;
@@ -8,6 +14,9 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,8 +24,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class FightController {
@@ -42,9 +53,12 @@ public class FightController {
     private AbstractBaseCard selectedCard;
     private User user;
     private BotGamer bot;
+    private ArrayList<Thread> allThreads;
+    private Timeline timeline;
 
     @FXML
     public void initialize() {
+        this.allThreads = new ArrayList<>();
         this.setBackgroundParent();
     }
 
@@ -56,7 +70,7 @@ public class FightController {
     }
 
     private void setupElixirTimerTask(GamePlayer p) {
-        Timeline tl = new Timeline(
+         timeline = new Timeline(
                 new KeyFrame(
                         Duration.millis(100),
                         new EventHandler<ActionEvent>() {
@@ -67,8 +81,8 @@ public class FightController {
                         }
                 )
                );
-        tl.setCycleCount(Timeline.INDEFINITE);
-        tl.play();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
 
     private void placementCards() {
@@ -91,6 +105,7 @@ public class FightController {
         this.placementCards();
     }
 
+    // choose card from choosen card
     public void cardClicked(MouseEvent mouseEvent) {
 
         ImageView iv = (ImageView) mouseEvent.getSource();
@@ -116,16 +131,20 @@ public class FightController {
         this.bot = b;
     }
 
+    // mouseEvent handler for start game
     public void startGame(MouseEvent mouseEvent) {
+        resetAllThreads();
         this.startGameBtn.setVisible(false);
 //        this.cards = ScreenObjectBuilder.getAllCards();
         this.bHandler = new BoardHandler(this.board);
-        this.manger = new GameManager(board.getGraphicsContext2D(),bHandler);
-        new Thread(manger).start();
-
+        this.manger = new GameManager(board.getGraphicsContext2D(),bHandler, startGameBtn);
+        Thread managerThread = new Thread(manger);
+        managerThread.start();
+        allThreads.add(managerThread);
         GamePlayer player = new GamePlayer(null,manger);
-        new Thread(player).start();
-
+        Thread playerThread = new Thread(player);
+        playerThread.start();
+        allThreads.add(playerThread);
         this.board.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -139,7 +158,36 @@ public class FightController {
             }
         });
         this.bot.setManager(manger);
-        new Thread(this.bot).start();
+        Thread botThread = new Thread(this.bot);
+        botThread.start();
+        allThreads.add(botThread);
         setupElixirTimerTask(player);
+    }
+
+    public void gotoMenu(MouseEvent mouseEvent) throws IOException {
+        resetAllThreads();
+        Stage stage = (Stage) parent.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/menu.fxml"));
+        Parent p = loader.load();
+        MenuController controller = loader.getController();
+        controller.setBot(this.bot);
+        controller.setCards(this.cards);
+        controller.setUser(this.user);
+        stage.setScene(new Scene(p));
+    }
+
+    private void resetAllThreads() {
+
+        for(Thread t : allThreads){
+            try {
+                t.stop();
+            }
+            catch (Exception ex){}
+        }
+
+        try {
+            timeline.stop();
+        }
+        catch (Exception ex){}
     }
 }

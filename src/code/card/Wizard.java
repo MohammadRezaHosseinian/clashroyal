@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for create Wizard card
+ * *
+ */
 public class Wizard extends Troop{
 
     public Wizard(TroopBuilder tb) {
@@ -12,6 +17,7 @@ public class Wizard extends Troop{
     }
 
     @Override
+    // this method for upgrade wizard card
     public void upgradeCard(Level l) {
         WizardUpgrade wu = new WizardUpgrade(l);
         this.hp = wu.hp;

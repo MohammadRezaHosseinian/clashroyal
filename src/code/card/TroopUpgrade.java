@@ -1,5 +1,9 @@
 package code.card;
-
+/*
+ **
+ * this abstact class for Upgrade card
+ * *
+*/
 public abstract class TroopUpgrade {
 
     protected int hp;

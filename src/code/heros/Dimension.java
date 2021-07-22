@@ -1,5 +1,11 @@
 package code.heros;
 
+/*
+ **
+ * this class handle dimension of heroes
+ **
+ */
+
 public class Dimension {
     private double width;
     private double height;

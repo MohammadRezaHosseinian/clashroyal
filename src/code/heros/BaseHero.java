@@ -1,5 +1,10 @@
 package code.heros;
 
+/*
+ **
+ * this class create basehero
+ **
+ */
 import code.castles.BaseCastle;
 import code.controllers.Defaults;
 import javafx.scene.canvas.GraphicsContext;

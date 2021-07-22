@@ -1,5 +1,10 @@
 package code.controllers;
 
+/*
+ **
+ * this class control card menu
+ **
+ */
 import code.card.AbstractBaseCard;
 import code.heros.BotGamer;
 import code.heros.ScreenObjectBuilder;
@@ -13,7 +18,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -38,6 +42,7 @@ public class CardMenuController {
         this.replacementSpells();
     }
 
+    // replace splle in choosen cards
     private void replacementSpells() {
         ImageView iv;
         AbstractBaseCard card;
@@ -54,6 +59,7 @@ public class CardMenuController {
         }
     }
 
+    // replace building in choosen cards
     private void replacementBuildings() {
         ImageView iv;
         AbstractBaseCard card;
@@ -70,6 +76,7 @@ public class CardMenuController {
         }
     }
 
+    // replace troop in choosen cards
     private void replacementTroops() {
         ImageView iv;
         AbstractBaseCard card;
@@ -86,6 +93,7 @@ public class CardMenuController {
         }
     }
 
+    // replace card in choosen cards
     private void replacementCards() {
         ImageView iv;
         AbstractBaseCard card;
@@ -109,6 +117,7 @@ public class CardMenuController {
     }
 
 
+    // go to main menu
     public void gotoMenu(MouseEvent mouseEvent) throws IOException {
         Stage stage = (Stage) parent.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../../res/fxml/menu.fxml"));
@@ -138,6 +147,7 @@ public class CardMenuController {
         replacementCards();
     }
 
+    // reset image from choosen cards image
     private void resetImagesSelectedCardsContainer(){
         ImageView iv;
         int len = selectedCardsContainer.getChildren().size();

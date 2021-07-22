@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for create InfernoTower card
+ * *
+ */
 import java.net.URI;
 
 public class Inferno_Tower extends Building implements CardImpl{
@@ -21,6 +26,7 @@ public class Inferno_Tower extends Building implements CardImpl{
     }
 
     @Override
+    // this method for upgrade inferno card
     public void upgradeCard(Level l) {
 
     }

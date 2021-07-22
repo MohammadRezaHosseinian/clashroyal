@@ -1,5 +1,10 @@
 package code.card;
 
+/*
+ **
+ * this class for Upgrade arrows card
+ * *
+ */
 public class Arrows_Upgrade extends TroopUpgrade{
 
     public Arrows_Upgrade(Level level) {

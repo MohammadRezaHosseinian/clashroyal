@@ -1,5 +1,11 @@
 package code.controllers;
 
+/*
+**
+* in this class set CONSTANT variable
+**
+ */
+
 public class Defaults {
     public static final int MINIMUM_PASSWORD_LEN = 8;
     public static final int MAXIMUN_PASSWORD_LEN = 40;
